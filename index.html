@@ -8,5 +8,12 @@
     <script src="index.js" defer></script>
     <link href="style.css" type="text/css" rel="stylesheet" />
   </head>
-  <body></body>
+  <body>
+    <form onsubmit="return false">
+      <label for="location">Enter Location</label>
+      <input id="location" name="location" type="text" required minlength="2" />
+      <button id="search" type="submit">Search</button>
+    </form>
+    <div class="main"></div>
+  </body>
 </html>
