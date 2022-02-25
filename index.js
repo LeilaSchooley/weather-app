@@ -35,13 +35,19 @@ function clearMainArea() {
 form.addEventListener("submit", (e) => {
   let userLocation = input.value;
   let data = getWeather(userLocation);
+  loadingWeather();
   data.then(function (response) {
     console.log(response);
     clearMainArea();
     addData(response);
   });
 });
+function loadingWeather() {
+  let loadingWeatherText = document.createElement("h3");
 
+  loadingWeatherText.textContent = "Loading Weather";
+  mainArea.appendChild(loadingWeatherText);
+}
 function addData(userData) {
   let weatherPara = document.createElement("h3");
   let weatherLocation = document.createElement("h3");
